@@ -2,6 +2,7 @@ package dev.rajkamal.productservicenov24.services;
 
 import dev.rajkamal.productservicenov24.configs.RestTemplateConfig;
 import dev.rajkamal.productservicenov24.dtos.FakeStoreProductDto;
+import dev.rajkamal.productservicenov24.exceptions.ProductNotFoundException;
 import dev.rajkamal.productservicenov24.models.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -36,7 +37,7 @@ public class FakeStoreProductService implements ProductService{
     }
 
     @Override
-    public Product getSingleProduct(long id) {
+    public Product getSingleProduct(long id) throws ProductNotFoundException {
         /*
         call the external fakestore product api
         'https://fakestoreapi.com/products/1'
@@ -53,7 +54,7 @@ public class FakeStoreProductService implements ProductService{
 //        fakeStoreProductDtoResponseEntity.getHeaders();
         FakeStoreProductDto fakeStoreProductDto = fakeStoreProductDtoResponseEntity.getBody();
         if(fakeStoreProductDto == null) {
-            return null;
+            throw new ProductNotFoundException("Product with "+id+" is not present with the service. It's an invalid id");
         }
 
         return fakeStoreProductDto.toProduct();

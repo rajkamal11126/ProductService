@@ -2,6 +2,8 @@ package dev.rajkamal.productservicenov24.controllers;
 
 
 import dev.rajkamal.productservicenov24.dtos.CreateProductRequestDto;
+import dev.rajkamal.productservicenov24.exceptions.ProductNotFoundException;
+import dev.rajkamal.productservicenov24.models.ErrorDTO;
 import dev.rajkamal.productservicenov24.models.Product;
 import dev.rajkamal.productservicenov24.services.ProductService;
 import org.springframework.http.HttpStatus;
@@ -37,7 +39,7 @@ public class ProductController {
      GET /products/{id}
      */
     @GetMapping("/products/{id}")
-    public ResponseEntity<Product> getSingleProduct(@PathVariable("id") long id){
+    public ResponseEntity<Product> getSingleProduct(@PathVariable("id") long id) throws ProductNotFoundException {
         Product p = productService.getSingleProduct(id);
 
         ResponseEntity<Product> responseEntity;
@@ -69,6 +71,16 @@ public class ProductController {
                 createProductRequestDto.getPrice(),
                 createProductRequestDto.getImage(),
                 createProductRequestDto.getCategory());
+    }
+
+    @ExceptionHandler(ProductNotFoundException.class)
+    public ResponseEntity<ErrorDTO> handleProductNotFoundException(ProductNotFoundException productNotFoundException){
+        ErrorDTO errorDTO = new ErrorDTO();
+
+
+        errorDTO.setMessage(productNotFoundException.getMessage());
+        ResponseEntity<ErrorDTO> responseEntity = new ResponseEntity<>(errorDTO, HttpStatus.NOT_FOUND);
+        return responseEntity;
     }
 
     @PutMapping("/products/{id}")
