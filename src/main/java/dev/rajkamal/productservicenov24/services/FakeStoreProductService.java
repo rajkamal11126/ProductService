@@ -3,6 +3,7 @@ package dev.rajkamal.productservicenov24.services;
 import dev.rajkamal.productservicenov24.configs.RestTemplateConfig;
 import dev.rajkamal.productservicenov24.dtos.FakeStoreProductDto;
 import dev.rajkamal.productservicenov24.models.Product;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -40,8 +41,21 @@ public class FakeStoreProductService implements ProductService{
         call the external fakestore product api
         'https://fakestoreapi.com/products/1'
          */
-        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/"+id,
+//        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/"+id,
+//                FakeStoreProductDto.class);
+
+        ResponseEntity<FakeStoreProductDto> fakeStoreProductDtoResponseEntity = restTemplate.getForEntity("https://fakestoreapi.com/products/"+id,
                 FakeStoreProductDto.class);
+
+        if(fakeStoreProductDtoResponseEntity.getStatusCode() != HttpStatus.OK) {
+            //handle this exception
+        }
+//        fakeStoreProductDtoResponseEntity.getHeaders();
+        FakeStoreProductDto fakeStoreProductDto = fakeStoreProductDtoResponseEntity.getBody();
+        if(fakeStoreProductDto == null) {
+            return null;
+        }
+
         return fakeStoreProductDto.toProduct();
     }
 
