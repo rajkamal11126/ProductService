@@ -3,7 +3,6 @@ package dev.rajkamal.productservicenov24.controllers;
 
 import dev.rajkamal.productservicenov24.dtos.CreateProductRequestDto;
 import dev.rajkamal.productservicenov24.exceptions.ProductNotFoundException;
-import dev.rajkamal.productservicenov24.models.ErrorDTO;
 import dev.rajkamal.productservicenov24.models.Product;
 import dev.rajkamal.productservicenov24.services.ProductService;
 import org.springframework.http.HttpStatus;
