@@ -31,5 +31,11 @@ public interface ProductRepository extends JpaRepository <Product, Long> {
     @Query("select p.title as title, p.id from Product p where p.category.title = :categoryName")
     List<ProductProjection> getTitleAndIdOfAllProductsWithGivenCategoryName(@Param("categoryName") String categoryName);
 
+    @Query(value = "select * from products p where p.id = 3 and p.title = :productTitle", nativeQuery = true)
+    List<ProductProjection> getTitleAndIdOfAllProductsWithGivenCategoryNameEquals(@Param("categoryName") String categoryName);
+
+
+
+
 
 }
