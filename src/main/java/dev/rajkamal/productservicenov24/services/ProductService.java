@@ -4,7 +4,7 @@ import dev.rajkamal.productservicenov24.exceptions.ProductNotFoundException;
 import dev.rajkamal.productservicenov24.models.Product;
 import java.util.List;
 
-public interface ProductService {
+public interface ProductService{
     List<Product> getAllProducts();
     Product getSingleProduct(long id) throws ProductNotFoundException;
     Product createProduct(String title,

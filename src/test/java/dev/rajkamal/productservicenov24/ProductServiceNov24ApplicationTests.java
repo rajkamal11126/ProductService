@@ -1,7 +1,6 @@
 package dev.rajkamal.productservicenov24;
 
 import dev.rajkamal.productservicenov24.Projections.ProductProjection;
-import dev.rajkamal.productservicenov24.models.Product;
 import dev.rajkamal.productservicenov24.repositories.ProductRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +26,11 @@ class ProductServiceNov24ApplicationTests {
 //        List<Product> products1 = productRepository.getTitleAndIdOfAllProductsWithGivenCategoryName("xyz");
 //        System.out.println(products1);
 
-        List<ProductProjection> productProjections = productRepository.getTitleAndIdOfAllProductsWithGivenCategoryName("electronics");
-        for (ProductProjection productProjection : productProjections) {
+        List<ProductProjection> productProjections = productRepository.getTitlesAndIdOfAllProductsWithGivenCategoryName("electronics");
+
+        for(ProductProjection productProjection: productProjections){
             System.out.println(productProjection.getId());
             System.out.println(productProjection.getTitle());
-
         }
         System.out.println();
     }

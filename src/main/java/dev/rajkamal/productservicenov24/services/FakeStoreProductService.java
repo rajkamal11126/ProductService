@@ -39,7 +39,7 @@ public class FakeStoreProductService implements ProductService{
     @Override
     public Product getSingleProduct(long id) throws ProductNotFoundException {
         /*
-        call the external fakestore product api
+        call the external fakestore product apil
         'https://fakestoreapi.com/products/1'
          */
 //        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject("https://fakestoreapi.com/products/"+id,
@@ -95,6 +95,7 @@ public class FakeStoreProductService implements ProductService{
         ResponseEntity<FakeStoreProductDto[]> response = restTemplate.getForEntity("https://fakestoreapi.com/products", FakeStoreProductDto[].class);
 
         FakeStoreProductDto[] fakeStoreProductDtos = response.getBody();
+        assert fakeStoreProductDtos != null;
         return Arrays.stream(fakeStoreProductDtos)
                 .map(FakeStoreProductDto::getCategory)
                 .distinct()

@@ -1,0 +1,17 @@
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\advices\ControllerAdvice.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\configs\RestTemplateConfig.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\controllers\ProductController.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\dtos\CreateProductRequestDto.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\dtos\FakeStoreProductDto.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\exceptions\ProductNotFoundException.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\models\BaseModel.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\models\Category.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\models\ErrorDTO.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\models\Product.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\ProductServiceNov24Application.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\Projections\ProductProjection.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\repositories\CategoryRepository.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\repositories\ProductRepository.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\services\FakeStoreProductService.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\services\ProductService.java
+C:\Users\rajka\IdeaProjects\ProductServiceNov24\src\main\java\dev\rajkamal\productservicenov24\services\SelfProductService.java
